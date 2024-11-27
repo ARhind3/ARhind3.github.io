@@ -1,0 +1,70 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  #simulation {
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  #hospital-view {
+    position: relative;
+    margin-bottom: 20px;
+  }
+  
+  #hospital-image {
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  #patients-waiting {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 18px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .sliders div {
+    margin-bottom: 20px;
+  }
+  
+  input[type="range"] {
+    width: 100%;
+  }
+  
+  canvas {
+    max-width: 100%;
+    margin-top: 20px;
+  }
+  
+  #feedback {
+    margin-top: 20px;
+  }
+  
+  #leaderboard {
+    margin-top: 30px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #5e00cc;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
