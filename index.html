@@ -4,60 +4,52 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hospital Throughput Simulator</title>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div id="simulation">
+  <div id="game">
     <h1>Hospital Management Simulator</h1>
-    <p>Manage your hospital by balancing patient care (throughput), resources (inventory), and costs (operational expense).</p>
+    <p>Balance your resources to treat patients efficiently and avoid bottlenecks!</p>
     
-    <div id="game-area">
-      <div id="hospital-view">
-        <img src="hospital.png" alt="Hospital" id="hospital-image">
-        <div id="patients-waiting">Patients Waiting: <span id="patient-count">10</span></div>
+    <div id="dashboard">
+      <div class="stat">
+        <p>Patients Waiting: <span id="patients-waiting">5</span></p>
+      </div>
+      <div class="stat">
+        <p>Patients Treated: <span id="patients-treated">0</span></p>
+      </div>
+      <div class="stat">
+        <p>Supplies Remaining: <span id="supplies">100</span></p>
+      </div>
+      <div class="stat">
+        <p>Budget: $<span id="budget">5000</span></p>
       </div>
     </div>
 
-    <div class="sliders">
-      <h2>Adjust Your Strategy:</h2>
-      <div>
-        <label for="staff-slider">Staff Level: <span id="staff-level">50</span></label>
-        <input type="range" id="staff-slider" min="0" max="100" value="50" />
+    <div id="actions">
+      <button onclick="hireStaff()">Hire Staff (-$500)</button>
+      <button onclick="buySupplies()">Buy Supplies (-$200)</button>
+      <button onclick="speedUp()">Speed Up Treatment (-$300)</button>
+    </div>
+
+    <div id="hospital">
+      <div id="queue">
+        <h3>Patient Queue:</h3>
+        <ul id="patient-queue"></ul>
       </div>
-      <div>
-        <label for="supplies-slider">Medical Supplies: <span id="supply-level">50</span></label>
-        <input type="range" id="supplies-slider" min="0" max="100" value="50" />
-      </div>
-      <div>
-        <label for="budget-slider">Operational Budget: <span id="budget-level">50</span></label>
-        <input type="range" id="budget-slider" min="0" max="100" value="50" />
+      <div id="treatment">
+        <h3>Treatment Rooms:</h3>
+        <ul id="treatment-rooms"></ul>
       </div>
     </div>
 
-    <canvas id="results-chart"></canvas>
-
-    <div id="feedback">
-      <p id="efficiency-score">Efficiency Score: 75</p>
-      <p id="feedback-text">Your hospital is running efficiently!</p>
-    </div>
-
-    <div id="scenarios">
-      <h2>Scenarios:</h2>
-      <button onclick="loadScenario('stable')">Stable Conditions</button>
-      <button onclick="loadScenario('pandemic')">Pandemic Crisis</button>
-      <button onclick="loadScenario('budgetCuts')">Budget Cuts</button>
-    </div>
-
-    <div id="leaderboard">
-      <h2>Leaderboard:</h2>
-      <ul id="leaderboard-list">
-        <li>Player 1: 120 Points</li>
-        <li>Player 2: 95 Points</li>
-        <li>Player 3: 88 Points</li>
-      </ul>
+    <div id="game-over">
+      <h2>Game Over</h2>
+      <p id="summary"></p>
+      <button onclick="restartGame()">Restart Game</button>
     </div>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>
